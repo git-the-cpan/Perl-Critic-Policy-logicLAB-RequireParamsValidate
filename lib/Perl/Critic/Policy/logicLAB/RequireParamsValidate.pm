@@ -11,11 +11,11 @@ use List::MoreUtils qw(any);
 
 use 5.006;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 Readonly::Scalar my $EXPL => q{Use Params::Validate for public facing APIs};
 Readonly::Scalar my $warning =>
-    q{Parameter validation not complying with required standard};
+  q{Parameter validation not complying with required standard};
 
 use constant supported_parameters => ();
 use constant default_severity     => $SEVERITY_MEDIUM;
@@ -26,8 +26,8 @@ use constant default_themes       => qw(logiclab);
 sub applies_to {
     return (
         qw(
-            PPI::Statement::Sub
-            )
+          PPI::Statement::Sub
+          )
     );
 }
 
@@ -63,7 +63,8 @@ sub _assert_params_validate {
 
     if ($ok) {
         return;
-    } else {
+    }
+    else {
         return $self->violation( $warning, $EXPL, $elem );
     }
 }
@@ -71,6 +72,16 @@ sub _assert_params_validate {
 1;
 
 __END__
+
+=pod
+
+=begin markdown
+
+[![CPAN version](https://badge.fury.io/pl/Perl-Critic-Policy-logicLAB-RequireParamsValidate.svg)](http://badge.fury.io/pl/Perl-Critic-Policy-logicLAB-RequireParamsValidate)
+[![Build Status](https://travis-ci.org/jonasbn/pcplrpv.svg?branch=master)](https://travis-ci.org/jonasbn/pcplrpv)
+[![Coverage Status](https://coveralls.io/repos/jonasbn/pcplrpv/badge.png)](https://coveralls.io/r/jonasbn/pcplrpv)
+
+=end markdown
 
 =head1 NAME
 
@@ -83,7 +94,7 @@ is themed: logiclab.
 
 =head1 VERSION
 
-This documentation describes version 0.01.
+This documentation describes version 0.03
 
 =head1 SYNOPSIS
 
@@ -227,7 +238,7 @@ Perl::Critic
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2013-2014 Jonas B. Nielsen, jonasbn. All rights reserved.
+Copyright (c) 2013-2015 Jonas B. Nielsen, jonasbn. All rights reserved.
 
 Perl::Critic::Policy::logicLAB::RequirePackageNamePattern;  is released under
 the Artistic License 2.0
